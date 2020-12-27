@@ -1,0 +1,31 @@
+@import '~@angular/material/theming';
+
+html, body {
+  height: 100%;
+}
+
+.link {
+  font-weight: bold;
+  color: mat-color(mat-palette($mat-indigo));
+}
+
+.vertical-form {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.page-content {
+  margin: 24px;
+}
+
+@media (min-width: 600px) {
+  .page-content {
+    width: 500px;
+    margin: 24px auto;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}

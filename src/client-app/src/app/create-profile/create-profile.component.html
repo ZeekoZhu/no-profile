@@ -1,0 +1,55 @@
+<mat-vertical-stepper linear #stepper>
+    <mat-step [stepControl]="profileGroup" [editable]="editable">
+        <ng-template matStepLabel>添加个人信息</ng-template>
+        <app-profile-form [profileGroup]="profileGroup"></app-profile-form>
+        <div>
+            <button mat-button matStepperNext color="primary">下一步</button>
+        </div>
+    </mat-step>
+    <mat-step [stepControl]="passwordGroup" [editable]="editable">
+        <ng-template matStepLabel>创建 No Profile</ng-template>
+        <p class="mat-caption">
+            您共享的信息将在“删除日期”到达时被自动删除
+        </p>
+        <form [formGroup]="passwordGroup" class="vertical-form">
+            <mat-form-field>
+                <mat-label>删除日期</mat-label>
+                <input [min]="minDate"
+                       [max]="maxDate"
+                       matInput
+                       [matDatepicker]="picker"
+                       required
+                       formControlName="expireDate">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+                <mat-error *ngIf="passwordGroup.get('expireDate').invalid">
+                    {{expireErrors()}}
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>访问密码</mat-label>
+                <input matInput formControlName="password" required>
+                <mat-error *ngIf="passwordGroup.get('password').invalid">
+                    {{passwordErrors()}}
+                </mat-error>
+            </mat-form-field>
+            <div *ngIf="!submitting; else spinner">
+                <button mat-button matStepperPrevious>上一步</button>
+                <button [disabled]="formInvalid" mat-button color="primary" type="submit" (click)="submit()">创建</button>
+            </div>
+            <ng-template #spinner>
+                <mat-spinner [diameter]="36"></mat-spinner>
+            </ng-template>
+            <ng-container *ngIf="error">
+                <mat-error>{{error}}</mat-error>
+            </ng-container>
+        </form>
+    </mat-step>
+    <mat-step [editable]="editable">
+        <ng-template matStepLabel>完成</ng-template>
+        <p class="mat-caption">通过下面的链接访问你的个人信息</p>
+        <a target="_blank" class="link" href="{{link}}">{{link}}</a>
+        <br />
+        <button mat-button [cdkCopyToClipboard]="link">复制链接</button>
+    </mat-step>
+</mat-vertical-stepper>
