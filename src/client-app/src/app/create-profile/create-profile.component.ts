@@ -56,6 +56,7 @@ export class CreateProfileComponent implements OnInit {
         this.profileSvc.save(this.profileGroup.value, expireDate, password)
             .catch(err => {
                 this.error = err;
+                console.error(err);
                 return '';
             }).then(x => {
             this.generatedId = x;
