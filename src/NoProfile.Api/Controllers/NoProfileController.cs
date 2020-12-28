@@ -6,7 +6,7 @@ using NoProfile.Api.Models;
 namespace NoProfile.Api.Controllers
 {
     [ApiController]
-    [Route("api/no-profile")]
+    [Route("api")]
     public class NoProfileController : ControllerBase
     {
 

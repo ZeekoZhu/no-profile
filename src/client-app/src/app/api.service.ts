@@ -10,11 +10,11 @@ export class ApiService {
     }
 
     async create(dto: CreateProfileDto): Promise<string> {
-        return await this.http.post<string>('/api/create', dto).toPromise();
+        return await this.http.post('/api/create', dto, { responseType: 'text'}).toPromise();
     }
 
     async get(id: string): Promise<string> {
-        return await this.http.get('/api/profile/' + id, { responseType: 'text' }).toPromise();
+        return await this.http.get('/api/' + id, { responseType: 'text' }).toPromise();
     }
 }
 

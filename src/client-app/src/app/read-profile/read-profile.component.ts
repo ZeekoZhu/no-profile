@@ -38,6 +38,7 @@ export class ReadProfileComponent implements OnInit {
             const profile = await this.profileSvc.get(id, password).then(JSON.parse);
             this.profileGroup.patchValue(profile);
         } catch (e) {
+            console.log(e);
             this.failed = true;
         }
         this.loaded = true;

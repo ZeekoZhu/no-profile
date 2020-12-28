@@ -1,5 +1,4 @@
 import { Component, Inject, OnInit, PLATFORM_ID, ViewChild } from '@angular/core';
-import { isPlatformBrowser } from '@angular/common';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatStepper } from '@angular/material/stepper';
 import { ProfileService } from '../profile.service';
@@ -23,7 +22,7 @@ export class CreateProfileComponent implements OnInit {
     get link() {
         const url = new URL(location.toString());
         url.pathname = `/profile/${this.generatedId}`;
-        url.search=`p=${encodeURIComponent(this.passwordGroup.get('password').value)}`;
+        url.search = `p=${encodeURIComponent(this.passwordGroup.get('password').value)}`;
         return url.toString();
     }
 
