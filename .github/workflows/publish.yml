@@ -36,16 +36,16 @@ jobs:
           # Password or personal access token used to log in to a Docker registry. If not set then no login will occur
           password: ${{secrets.PAT}}
           # Server address of Docker registry. If not set then will default to Docker Hub
-          registry: ghcr.io/ZeekoZhu/no-profile-web
+          registry: ghcr.io/zeekozhu/no-profile-web
       - name: Build no-profile-web
         uses: docker/build-push-action@v2.2.0
         with:
-          tags: ghcr.io/ZeekoZhu/no-profile-web:latest
+          tags: ghcr.io/zeekozhu/no-profile-web:latest
           context: ${{github.workspace}}/src/client-app
           push: true
       - name: Build no-profile-api
         uses: docker/build-push-action@v2.2.0
         with:
-          tags: ghcr.io/ZeekoZhu/no-profile-api:latest
+          tags: ghcr.io/zeekozhu/no-profile-api:latest
           context: ${{github.workspace}}/src/NoProfile.Api
           push: true
