@@ -11,4 +11,5 @@ RUN npm run build --prod
 
 FROM nginx:alpine
 
-COPY --from=builder /usr/src/app/dist/client-app/ /usr/share/nginx/html
+COPY nginx-site.conf /etc/nginx/conf.d/default.conf
+COPY --from=builder /usr/src/app/dist/client-app/ /app
