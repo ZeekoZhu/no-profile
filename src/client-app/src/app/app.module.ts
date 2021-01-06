@@ -17,6 +17,7 @@ import { ClipboardModule } from '@angular/cdk/clipboard';
 import { HttpClientModule } from '@angular/common/http';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { ProfileFormComponent } from './profile-form/profile-form.component';
+import { ProfileViewComponent } from './profile-view/profile-view.component';
 
 const routes: Routes = [
     { path: 'create', component: CreateProfileComponent },
@@ -30,6 +31,7 @@ const routes: Routes = [
         CreateProfileComponent,
         ReadProfileComponent,
         ProfileFormComponent,
+        ProfileViewComponent,
     ],
     imports: [
         BrowserModule.withServerTransition({ appId: 'serverApp' }),
