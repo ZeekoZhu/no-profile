@@ -1,7 +1,8 @@
 <ng-container *ngIf="loaded;else spinner">
-    <app-profile-form [profileGroup]="profileGroup"></app-profile-form>
-    <span *ngIf="failed" class="mat-error">某位不知名的网友删除了他在 <a target="_blank" href="/">No Profile</a> 分享的信息</span>
-    <span *ngIf="!failed" class="mat-subheading-1">某位不知名的网友通过 <a target="_blank"
+    <app-profile-view [profile]="profile"></app-profile-view>
+    <mat-divider></mat-divider>
+    <span *ngIf="failed" class="mat-error block pt-4">某位不知名的网友删除了他在 <a target="_blank" href="/">No Profile</a> 分享的信息</span>
+    <span *ngIf="!failed" class="block pt-4">某位不知名的网友通过 <a target="_blank"
                                                                  href="/">No Profile</a> 与你分享了他的信息</span>
 </ng-container>
 <ng-template #spinner>

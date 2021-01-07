@@ -1,0 +1,24 @@
+<mat-action-list>
+    <mat-list-item *ngIf="profile?.email" [cdkCopyToClipboard]="profile?.email">
+        <mat-icon class="select-none" mat-list-icon>email</mat-icon>
+        <div mat-line class="text-black">{{profile?.email}}</div>
+        <div mat-line class="text-gray-600 select-none">邮箱</div>
+    </mat-list-item>
+    <mat-list-item *ngIf="profile?.phone" [cdkCopyToClipboard]="profile?.phone">
+        <mat-icon class="select-none" mat-list-icon>phone</mat-icon>
+        <div mat-line class="text-black">{{profile?.phone}}</div>
+        <div mat-line class="text-gray-600 select-none">电话</div>
+    </mat-list-item>
+    <mat-list-item *ngIf="profile?.wechat" [cdkCopyToClipboard]="profile?.wechat">
+        <mat-icon class="select-none" mat-list-icon>chat</mat-icon>
+        <div mat-line class="text-black">{{profile?.wechat}}</div>
+        <div mat-line class="text-gray-600 select-none">微信</div>
+    </mat-list-item>
+    <ng-container *ngIf="profile?.notes">
+        <mat-divider></mat-divider>
+        <div class="flex flex-row justify-start notes">
+            <mat-icon class="select-none notes-icon">notes</mat-icon>
+            <pre class="notes-content">{{profile?.notes}}</pre>
+        </div>
+    </ng-container>
+</mat-action-list>

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ApiService } from '../api.service';
-import { ProfileService } from '../profile.service';
+import { Profile, ProfileService } from '../profile.service';
 import { FormBuilder } from '@angular/forms';
 
 @Component({
@@ -11,15 +11,9 @@ import { FormBuilder } from '@angular/forms';
 })
 export class ReadProfileComponent implements OnInit {
 
-    profileGroup = this.fb.group({
-        email: [ '' ],
-        weChat: [ '' ],
-        phone: [ '' ],
-        notes: [ '' ],
-    });
-
     loaded = false;
     failed = false;
+    profile: Partial<Profile> = {};
 
     constructor(private fb: FormBuilder,
                 private route: ActivatedRoute,
@@ -27,7 +21,6 @@ export class ReadProfileComponent implements OnInit {
                 private profileSvc: ProfileService) { }
 
     async ngOnInit() {
-        this.profileGroup.disable({ onlySelf: false });
         const id = this.route.snapshot.paramMap.get('id');
         const password = this.route.snapshot.queryParamMap.get('p');
         await this.loadProfile(id, password);
@@ -35,8 +28,7 @@ export class ReadProfileComponent implements OnInit {
 
     async loadProfile(id: string, password: string) {
         try {
-            const profile = await this.profileSvc.get(id, password).then(JSON.parse);
-            this.profileGroup.patchValue(profile);
+            this.profile = await this.profileSvc.get(id, password).then(JSON.parse);
         } catch (e) {
             console.error(e);
             this.failed = true;

@@ -18,6 +18,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { ProfileFormComponent } from './profile-form/profile-form.component';
 import { ProfileViewComponent } from './profile-view/profile-view.component';
+import { MatListModule } from '@angular/material/list';
+import { MatIconModule } from '@angular/material/icon';
 
 const routes: Routes = [
     { path: 'create', component: CreateProfileComponent },
@@ -37,8 +39,9 @@ const routes: Routes = [
         BrowserModule.withServerTransition({ appId: 'serverApp' }),
         BrowserAnimationsModule,
         RouterModule.forRoot(routes, {
-    initialNavigation: 'enabled'
-}),
+            initialNavigation: 'enabled',
+            relativeLinkResolution: 'legacy',
+        }),
         MatStepperModule,
         ReactiveFormsModule,
         MatFormFieldModule,
@@ -49,6 +52,8 @@ const routes: Routes = [
         ClipboardModule,
         HttpClientModule,
         MatProgressSpinnerModule,
+        MatListModule,
+        MatIconModule,
     ],
     providers: [],
     bootstrap: [ AppComponent ],

@@ -17,8 +17,15 @@ export class ProfileService {
         return this.api.create(data);
     }
 
-    async get(id: string, password: string) {
+    async get(id: string, password: string): Promise<string> {
         const encrypted = await this.api.get(id);
         return AES.decrypt(encrypted, password).toString(Utf8);
     }
+}
+
+export interface Profile {
+    email: string;
+    phone: string;
+    wechat: string;
+    notes: string;
 }
