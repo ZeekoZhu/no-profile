@@ -3,7 +3,7 @@ module.exports = (isProd) => ({
     purge: {
       enabled: isProd,
       content: [
-        '**/*.{html,ts}',
+        'src/**/*.{html,ts}',
       ]
     },
     darkMode: false, // or 'media' or 'class'

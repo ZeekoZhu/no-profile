@@ -20,6 +20,7 @@ import { ProfileFormComponent } from './profile-form/profile-form.component';
 import { ProfileViewComponent } from './profile-view/profile-view.component';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 const routes: Routes = [
     { path: 'create', component: CreateProfileComponent },
@@ -54,6 +55,7 @@ const routes: Routes = [
         MatProgressSpinnerModule,
         MatListModule,
         MatIconModule,
+        MatSnackBarModule,
     ],
     providers: [],
     bootstrap: [ AppComponent ],

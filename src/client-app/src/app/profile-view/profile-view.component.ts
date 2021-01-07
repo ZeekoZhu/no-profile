@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Clipboard } from '@angular/cdk/clipboard';
 import { Profile } from '../profile.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
     selector: 'app-profile-view',
@@ -11,13 +12,15 @@ export class ProfileViewComponent implements OnInit {
     @Input()
     profile: Partial<Profile>;
 
-    constructor(public clip: Clipboard) { }
+    constructor(public clip: Clipboard, private snackBar: MatSnackBar) { }
 
     ngOnInit(): void {
     }
 
     copy(value: string) {
-        this.clip.copy(value);
+        if (this.clip.copy(value)) {
+            this.snackBar.open('已复制', null, { duration: 3000 });
+        }
     }
 
 }

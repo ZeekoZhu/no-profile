@@ -26,6 +26,6 @@ export class ProfileService {
 export interface Profile {
     email: string;
     phone: string;
-    wechat: string;
+    weChat: string;
     notes: string;
 }
