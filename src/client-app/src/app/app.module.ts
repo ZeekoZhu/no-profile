@@ -8,19 +8,19 @@ import { ReadProfileComponent } from './read-profile/read-profile.component';
 import { RouterModule, Routes } from '@angular/router';
 import { MatStepperModule } from '@angular/material/stepper';
 import { ReactiveFormsModule } from '@angular/forms';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
-import { MatButtonModule } from '@angular/material/button';
+import { MatLegacyFormFieldModule as MatFormFieldModule } from '@angular/material/legacy-form-field';
+import { MatLegacyInputModule as MatInputModule } from '@angular/material/legacy-input';
+import { MatLegacyButtonModule as MatButtonModule } from '@angular/material/legacy-button';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { ClipboardModule } from '@angular/cdk/clipboard';
 import { HttpClientModule } from '@angular/common/http';
-import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatLegacyProgressSpinnerModule as MatProgressSpinnerModule } from '@angular/material/legacy-progress-spinner';
 import { ProfileFormComponent } from './profile-form/profile-form.component';
 import { ProfileViewComponent } from './profile-view/profile-view.component';
-import { MatListModule } from '@angular/material/list';
+import { MatLegacyListModule as MatListModule } from '@angular/material/legacy-list';
 import { MatIconModule } from '@angular/material/icon';
-import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatLegacySnackBarModule as MatSnackBarModule } from '@angular/material/legacy-snack-bar';
 
 const routes: Routes = [
     { path: 'create', component: CreateProfileComponent },
@@ -40,9 +40,8 @@ const routes: Routes = [
         BrowserModule.withServerTransition({ appId: 'serverApp' }),
         BrowserAnimationsModule,
         RouterModule.forRoot(routes, {
-            initialNavigation: 'enabled',
-            relativeLinkResolution: 'legacy',
-        }),
+    initialNavigation: 'enabled'
+}),
         MatStepperModule,
         ReactiveFormsModule,
         MatFormFieldModule,

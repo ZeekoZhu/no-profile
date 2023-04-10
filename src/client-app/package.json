@@ -11,16 +11,16 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "~14.3.0",
-    "@angular/cdk": "^14.2.7",
-    "@angular/common": "~14.3.0",
-    "@angular/compiler": "~14.3.0",
-    "@angular/core": "~14.3.0",
-    "@angular/forms": "~14.3.0",
-    "@angular/material": "^14.2.7",
-    "@angular/platform-browser": "~14.3.0",
-    "@angular/platform-browser-dynamic": "~14.3.0",
-    "@angular/router": "~14.3.0",
+    "@angular/animations": "~15.2.6",
+    "@angular/cdk": "^15.2.6",
+    "@angular/common": "~15.2.6",
+    "@angular/compiler": "~15.2.6",
+    "@angular/core": "~15.2.6",
+    "@angular/forms": "~15.2.6",
+    "@angular/material": "^15.2.6",
+    "@angular/platform-browser": "~15.2.6",
+    "@angular/platform-browser-dynamic": "~15.2.6",
+    "@angular/router": "~15.2.6",
     "crypto-js": "^4.0.0",
     "rxjs": "~6.6.3",
     "tslib": "^2.0.0",
@@ -28,9 +28,9 @@
   },
   "devDependencies": {
     "@angular-builders/custom-webpack": "11.0.0",
-    "@angular-devkit/build-angular": "~14.2.11",
+    "@angular-devkit/build-angular": "~15.2.5",
     "@angular/cli": "~11.0.5",
-    "@angular/compiler-cli": "~14.3.0",
+    "@angular/compiler-cli": "~15.2.6",
     "@ngneat/tailwind": "^5.1.0",
     "@types/crypto-js": "^3.1.47",
     "@types/node": "^12.11.1",
@@ -38,6 +38,6 @@
     "tailwindcss": "2.0.2",
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
-    "typescript": "~4.6.4"
+    "typescript": "~4.9.5"
   }
 }
