@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ApiService } from '../api.service';
 import { Profile, ProfileService } from '../profile.service';
-import { FormBuilder } from '@angular/forms';
+import { UntypedFormBuilder } from '@angular/forms';
 
 @Component({
     selector: 'app-read-profile',
@@ -15,7 +15,7 @@ export class ReadProfileComponent implements OnInit {
     failed = false;
     profile: Partial<Profile> = {};
 
-    constructor(private fb: FormBuilder,
+    constructor(private fb: UntypedFormBuilder,
                 private route: ActivatedRoute,
                 private api: ApiService,
                 private profileSvc: ProfileService) { }

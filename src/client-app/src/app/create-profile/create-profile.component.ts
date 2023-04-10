@@ -1,5 +1,5 @@
 import { Component, Inject, OnInit, PLATFORM_ID, ViewChild } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { MatStepper } from '@angular/material/stepper';
 import { ProfileService } from '../profile.service';
 
@@ -9,8 +9,8 @@ import { ProfileService } from '../profile.service';
     styleUrls: [ './create-profile.component.scss' ],
 })
 export class CreateProfileComponent implements OnInit {
-    profileGroup: FormGroup;
-    passwordGroup: FormGroup;
+    profileGroup: UntypedFormGroup;
+    passwordGroup: UntypedFormGroup;
     minDate: Date;
     maxDate: Date;
     editable = true;
@@ -67,7 +67,7 @@ export class CreateProfileComponent implements OnInit {
         });
     }
 
-    constructor(private _fb: FormBuilder, private profileSvc: ProfileService, @Inject(PLATFORM_ID) private platform) {
+    constructor(private _fb: UntypedFormBuilder, private profileSvc: ProfileService, @Inject(PLATFORM_ID) private platform) {
         const now = new Date();
         this.minDate = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1);
         this.maxDate = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 365);
