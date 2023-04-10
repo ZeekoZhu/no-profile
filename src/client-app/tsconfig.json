@@ -11,11 +11,15 @@
         "experimentalDecorators": true,
         "moduleResolution": "node",
         "importHelpers": true,
-        "target": "es2015",
+        "target": "es2022",
         "module": "es2020",
         "lib": [
             "es2018",
             "dom"
-        ]
+        ],
+        "paths": {
+            "crypto": ["./node_modules/crypto-browserify"],
+            "stream": ["./node_modules/stream-browserify"]
+        }
     }
 }

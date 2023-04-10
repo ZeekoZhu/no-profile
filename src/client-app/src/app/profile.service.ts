@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import AES from 'crypto-js/aes';
-import Base64 from 'crypto-js/enc-base64';
 import Utf8 from 'crypto-js/enc-utf8';
 import { ApiService } from './api.service';
 
