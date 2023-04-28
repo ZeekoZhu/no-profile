@@ -39,7 +39,7 @@ jobs:
       - name: Build no-profile-api
         uses: docker/build-push-action@v4
         with:
-          tags: ghcr.io/ZeekoZhu/no-profile-api:latest
+          tags: ghcr.io/zeekozhu/no-profile-api:latest
           context: ${{github.workspace}}/src/NoProfile.Api
           file: ${{github.workspace}}/src/NoProfile.Api/Dockerfile
           push: true
@@ -67,7 +67,7 @@ jobs:
       - name: Build no-profile-web
         uses: docker/build-push-action@v4
         with:
-          tags: ghcr.io/ZeekoZhu/no-profile-web:latest
+          tags: ghcr.io/zeekozhu/no-profile-web:latest
           context: ${{github.workspace}}/src/client-app
           file: ${{github.workspace}}/src/client-app/Dockerfile
           push: true
