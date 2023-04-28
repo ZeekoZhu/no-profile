@@ -33,7 +33,7 @@ jobs:
           # Username used to log in to a Docker registry. If not set then no login will occur
           username: ZeekoZhu
           # Password or personal access token used to log in to a Docker registry. If not set then no login will occur
-          password: ${{secrets.PAT}}
+          password: ${{secrets.GITHUB_TOKEN}}
           # Server address of Docker registry. If not set then will default to Docker Hub
           registry: ghcr.io/zeekozhu/no-profile-web
       - name: Build no-profile-api
@@ -61,7 +61,7 @@ jobs:
           # Username used to log in to a Docker registry. If not set then no login will occur
           username: ZeekoZhu
           # Password or personal access token used to log in to a Docker registry. If not set then no login will occur
-          password: ${{secrets.PAT}}
+          password: ${{secrets.GITHUB_TOKEN}}
           # Server address of Docker registry. If not set then will default to Docker Hub
           registry: ghcr.io/zeekozhu/no-profile-web
       - name: Build no-profile-web
