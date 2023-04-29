@@ -1,18 +1,18 @@
 <mat-action-list>
     <mat-list-item *ngIf="profile?.email" (click)="copy(profile?.email)">
-        <mat-icon class="select-none" mat-list-icon>email</mat-icon>
-        <div mat-line class="text-black">{{profile?.email}}</div>
-        <div mat-line class="text-gray-600 select-none">邮箱</div>
+        <mat-icon class="select-none" matListItemIcon>email</mat-icon>
+        <div matListItemLine class="text-black">{{profile?.email}}</div>
+        <div matListItemLine class="text-gray-600 select-none">邮箱</div>
     </mat-list-item>
     <mat-list-item *ngIf="profile?.phone" (click)="copy(profile?.phone)">
-        <mat-icon class="select-none" mat-list-icon>phone</mat-icon>
-        <div mat-line class="text-black">{{profile?.phone}}</div>
-        <div mat-line class="text-gray-600 select-none">电话</div>
+        <mat-icon class="select-none" matListItemIcon>phone</mat-icon>
+        <div matListItemLine class="text-black">{{profile?.phone}}</div>
+        <div matListItemLine class="text-gray-600 select-none">电话</div>
     </mat-list-item>
     <mat-list-item *ngIf="profile?.weChat" (click)="copy(profile?.weChat)">
-        <mat-icon class="select-none" mat-list-icon>chat</mat-icon>
-        <div mat-line class="text-black">{{profile?.weChat}}</div>
-        <div mat-line class="text-gray-600 select-none">微信</div>
+        <mat-icon class="select-none" matListItemIcon>chat</mat-icon>
+        <div matListItemLine class="text-black">{{profile?.weChat}}</div>
+        <div matListItemLine class="text-gray-600 select-none">微信</div>
     </mat-list-item>
     <ng-container *ngIf="profile?.notes">
         <mat-divider></mat-divider>

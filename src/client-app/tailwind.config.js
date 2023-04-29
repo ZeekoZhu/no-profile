@@ -1,17 +1,10 @@
-module.exports = (isProd) => ({
-    prefix: '',
-    purge: {
-      enabled: isProd,
-      content: [
-        'src/**/*.{html,ts}',
-      ]
-    },
-    darkMode: false, // or 'media' or 'class'
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+    content: [
+        "./src/**/*.{html,ts}",
+    ],
     theme: {
-      extend: {},
-    },
-    variants: {
-      extend: {},
+        extend: {},
     },
     plugins: [],
-});
+}
